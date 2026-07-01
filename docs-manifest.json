@@ -1,0 +1,53 @@
+{
+  "repo": "smilinTux/skchat",
+  "branch": "main",
+  "path": "docs",
+  "generated": "2026-06-30",
+  "note": "Committed fallback for the /docs viewer when the GitHub Contents API is unavailable or rate-limited. Regenerate from: python docs-manifest-gen.py smilinTux/skchat --out docs-manifest.json",
+  "docs": [
+    {
+      "name": "ARCHITECTURE.md",
+      "title": "skchat — Architecture"
+    },
+    {
+      "name": "comms-suite-plan.md",
+      "title": "skchat Sovereign Comms Suite — Architecture & Phased Roadmap"
+    },
+    {
+      "name": "crypto-architecture.md",
+      "title": "skchat — Cryptography Architecture & Quantum-Resistance"
+    },
+    {
+      "name": "lumina-everywhere-sprint-plan.md",
+      "title": "▶ Lumina Everywhere — Master Sprint Plan (2026-06-17)"
+    },
+    {
+      "name": "mcp-reference.md",
+      "title": "SKChat MCP Tool Reference"
+    },
+    {
+      "name": "quantum-resistance-architecture.md",
+      "title": "SK Ecosystem — Quantum-Resistance Architecture & Migration Plan"
+    },
+    {
+      "name": "skchat-unified-client-federation-plan.md",
+      "title": "▶ SKChat Unified Sovereign Client + Federation — Master Plan (2026-06-20)"
+    },
+    {
+      "name": "skos-files-extend-plan.md",
+      "title": "skos Files vs Nextcloud Files — Gap Analysis & \"Extend skos Files\" Plan"
+    },
+    {
+      "name": "skos-gtd-plan.md",
+      "title": "skos GTD — One Inbox, One Board, One Lineage"
+    },
+    {
+      "name": "skos-ingest-plan.md",
+      "title": "skos Ingest — Universal Capture → Triage → Federated Placement"
+    },
+    {
+      "name": "sovereign-conf-calls-plan.md",
+      "title": "▶ Sovereign Conf Calls — Master Plan (2026-06-18)"
+    }
+  ]
+}
