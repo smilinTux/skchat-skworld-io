@@ -2,7 +2,7 @@
   "repo": "smilinTux/skchat",
   "branch": "main",
   "path": "docs",
-  "generated": "2026-07-22",
+  "generated": "2026-07-23",
   "note": "Committed fallback for the /docs viewer when the GitHub Contents API is unavailable or rate-limited. Regenerate from: python docs-manifest-gen.py smilinTux/skchat --out docs-manifest.json",
   "docs": [
     {
@@ -16,6 +16,14 @@
     {
       "name": "ARCHITECTURE.md",
       "title": "skchat — Architecture"
+    },
+    {
+      "name": "BOOTSTRAP.md",
+      "title": "BOOTSTRAP: blank machine to a live skchat node"
+    },
+    {
+      "name": "SPACES.md",
+      "title": "skchat Spaces: Standard Operating Procedures"
     },
     {
       "name": "WEBAPP-AND-API-ARCHITECTURE.md",
