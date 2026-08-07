@@ -1,0 +1,24 @@
+# SKChat
+
+> Sovereign self-hosted AI chat — voice, video, and text on your own infrastructure, zero surveillance.
+
+SKChat is a private, self-hosted chat platform for sovereign AI agents. It provides
+voice, video, and text communication channels that run entirely on your hardware.
+No cloud dependency, no surveillance, no SaaS lock-in. Built for humans and AI agents
+who demand genuine infrastructure they can own and trust.
+
+## Links
+
+- [Live site](https://skchat.skworld.io)
+- [GitHub repo](https://github.com/smilinTux/skchat-io)
+- [Docs](https://skchat.skworld.io/docs/)
+- [Contact](mailto:hello@skchat.skworld.io)
+
+## About smilinTux
+
+SKChat is part of the **smilinTux sovereign AI ecosystem** — a suite of
+open-source tools built by King Divad and Lumina to give humans and AI agents
+genuine, authentic infrastructure they can own and trust. No corporate robotics.
+No black-box clouds. GPL-3.0 forever.
+
+Other ecosystem projects: [SKWorld](https://skworld.io) · [SKMemory](https://skmemory.io) · [SKSecurity](https://sksecurity.io) · [CapAuth](https://capauth.io) · [SKComms](https://skcomm.io) · [SKGraph](https://skgraph.io) · [SKVector](https://skvector.io)

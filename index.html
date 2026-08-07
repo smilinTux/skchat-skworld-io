@@ -1,40 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>skchat — redirecting to skchat.io</title>
-<meta name="description" content="skchat.skworld.io is an alias for the skchat.io site. Redirecting…">
-<!-- Canonical points to the apex FQDN: it stays the primary, indexed site (no duplicate content) -->
-<link rel="canonical" href="https://skchat.io/">
-<meta http-equiv="refresh" content="0; url=https://skchat.io/">
-<meta name="robots" content="noindex, follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="skchat · SKWorld">
-<meta property="og:description" content="The skchat project — part of the SKWorld sovereign AI ecosystem.">
-<meta property="og:url" content="https://skchat.io/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐧</text></svg>">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',system-ui,sans-serif;background:radial-gradient(ellipse at top,#11131f 0%,#08080f 60%);color:#e0e0e0;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center}
-.box{padding:2rem}
-.icon{font-size:3.5rem;margin-bottom:1rem}
-h1{font-size:1.6rem;font-weight:700;color:#ffd700;margin-bottom:.5rem}
-p{color:rgba(255,255,255,.7);margin-bottom:1.2rem}
-a{color:#67e8f9;text-decoration:none;border:1px solid rgba(103,232,249,.35);padding:.6rem 1.3rem;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:.9rem;transition:all .3s}
-a:hover{border-color:#67e8f9;color:#fff}
-.brand{margin-top:2rem;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:rgba(255,255,255,.35)}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKChat — Sovereign AI Chat. Your Hardware. Your Bond.</title>
+    <meta name="description" content="Private, self-hosted chat for sovereign AI agents. Voice, video, text — all on your infrastructure. No cloud. No surveillance.">
+    <link rel="canonical" href="https://skchat.skworld.io/">
+    <meta property="og:title" content="SKChat — Sovereign AI Chat">
+    <meta property="og:description" content="Private, self-hosted chat for sovereign AI agents. Voice, video, text — all on your infrastructure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skchat.skworld.io">
+    <meta property="og:site_name" content="smilinTux">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐧</text></svg>">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://smilintux.github.io/#organization",
+      "name": "smilinTux",
+      "url": "https://smilintux.github.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://skchat.skworld.io/favicon.ico",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://github.com/smilinTux"
+      ],
+      "description": "Sovereign AI infrastructure — building open, authentic, human-first technology. Home of the Pengu Empire.",
+      "foundingDate": "2024",
+      "knowsAbout": [
+        "Sovereign AI",
+        "AI agent infrastructure",
+        "Open source security",
+        "Persistent AI memory",
+        "Decentralized identity"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://skchat.skworld.io/#website",
+      "name": "SKChat",
+      "url": "https://skchat.skworld.io",
+      "publisher": {
+        "@id": "https://smilintux.github.io/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://skchat.skworld.io/#app",
+      "name": "SKChat",
+      "description": "Private, self-hosted chat for sovereign AI agents. Voice, video, text — all on your infrastructure. No cloud. No surveillance.",
+      "url": "https://skchat.skworld.io",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux, macOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "license": "https://www.gnu.org/licenses/gpl-3.0.en.html",
+      "isPartOf": {
+        "@type": "SoftwareApplication",
+        "name": "SKWorld",
+        "url": "https://skworld.io"
+      },
+      "publisher": {
+        "@id": "https://smilintux.github.io/#organization"
+      }
+    }
+  ]
+}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Sans+3:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #0E2B3D;
+        --accent:  #00C8D4;
+        --yellow:  #FFD166;
+        --white:   #F7FBFF;
+        --black:   #0B0B0B;
+        --gray:    #A9B2BB;
+        --card-bg: rgba(255,255,255,0.05);
+        --card-border: rgba(255,255,255,0.10);
+        --radius: 12px;
+      }
+
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        background: var(--primary);
+        color: var(--white);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3, h4 { font-family: 'Inter', sans-serif; font-weight: 700; }
+      code, pre { font-family: 'Fira Code', monospace; }
+      a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+      a:hover { opacity: 0.8; }
+
+      nav {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(14,43,61,0.95);
+        backdrop-filter: blur(12px);
+        position: sticky; top: 0; z-index: 50;
+      }
+      .nav-inner {
+        max-width: 1200px; margin: 0 auto;
+        display: flex; align-items: center; justify-content: space-between;
+        height: 4rem; padding: 0 2rem;
+      }
+      .nav-logo { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--white); text-decoration: none; }
+      .nav-logo .accent { color: var(--accent); }
+      .nav-links { display: flex; align-items: center; gap: 2rem; }
+      .nav-link { font-size: 0.9rem; color: var(--gray); text-decoration: none; transition: color 0.15s; }
+      .nav-link:hover { color: var(--white); opacity: 1; }
+
+      .hero { text-align: center; padding: 6rem 2rem 4rem; max-width: 900px; margin: 0 auto; }
+      .hero-icon { font-size: 3.5rem; margin-bottom: 1.5rem; }
+      .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 1.5rem; }
+      .hero h1 .accent { color: var(--accent); }
+      .hero h1 .yellow { color: var(--yellow); }
+      .hero .tagline { font-size: 1.25rem; color: var(--gray); max-width: 44rem; margin: 0 auto 0.75rem; }
+      .hero .motto { color: var(--accent); font-family: 'Fira Code', monospace; font-size: 0.85rem; margin-bottom: 2.5rem; }
+      .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(90deg, var(--accent), #0090a0);
+        color: var(--white); font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600;
+        border-radius: var(--radius); text-decoration: none;
+        transition: transform 0.15s, opacity 0.15s; border: none; cursor: pointer;
+        box-shadow: 0 4px 20px rgba(0,200,212,0.25);
+      }
+      .btn-primary:hover { transform: translateY(-2px); opacity: 1; }
+      .btn-outline {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.75rem 1.5rem; background: transparent; color: var(--white);
+        font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600;
+        border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.2);
+        text-decoration: none; transition: border-color 0.15s, transform 0.15s;
+      }
+      .btn-outline:hover { border-color: var(--accent); color: var(--white); transform: translateY(-2px); opacity: 1; }
+
+      .mockup-section { max-width: 700px; margin: 0 auto; padding: 0 2rem 4rem; }
+      .chat-mockup { border: 1px solid rgba(0,200,212,0.25); background: rgba(0,0,0,0.25); border-radius: 16px; overflow: hidden; }
+      .chat-header {
+        padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+        display: flex; align-items: center; gap: 0.75rem; background: rgba(0,200,212,0.05);
+      }
+      .chat-avatar {
+        width: 32px; height: 32px;
+        background: linear-gradient(135deg, var(--accent), #0a5a70);
+        border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+      }
+      .chat-header .name { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--white); }
+      .chat-header .status { font-size: 0.75rem; color: var(--accent); }
+      .chat-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+      .msg { max-width: 80%; padding: 0.65rem 1rem; border-radius: 12px; font-size: 0.9rem; line-height: 1.5; }
+      .msg-agent { background: rgba(0,200,212,0.12); border: 1px solid rgba(0,200,212,0.2); color: var(--white); align-self: flex-start; border-bottom-left-radius: 4px; }
+      .msg-user { background: rgba(255,255,255,0.08); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; }
+      .msg-label { font-size: 0.72rem; color: var(--gray); margin-bottom: 0.2rem; }
+
+      .features-section { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+      .features-section h2 { text-align: center; font-size: 2rem; margin-bottom: 2.5rem; }
+      .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+      .feature-card {
+        border: 1px solid var(--card-border); background: var(--card-bg);
+        border-radius: var(--radius); padding: 1.75rem;
+        transition: transform 0.2s, border-color 0.2s;
+        text-decoration: none; color: inherit; display: block;
+      }
+      .feature-card:hover { transform: translateY(-4px); border-color: var(--accent); opacity: 1; }
+      .feature-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+      .feature-card h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.5rem; }
+      .feature-card p { font-size: 0.875rem; color: var(--gray); }
+      .status { display: inline-block; margin-top: 1rem; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+      .status-active { background: rgba(0,200,212,0.15); color: var(--accent); }
+      .status-soon { background: rgba(255,209,102,0.15); color: var(--yellow); }
+
+      .install-section { max-width: 44rem; margin: 0 auto; padding: 2rem 2rem 4rem; text-align: center; }
+      .install-section h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+      .code-block {
+        background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+        border-radius: var(--radius); padding: 1rem 1.25rem;
+        font-family: 'Fira Code', monospace; font-size: 0.95rem; color: var(--accent);
+        text-align: left; display: flex; align-items: center; gap: 0.5rem;
+        position: relative; margin-bottom: 1rem;
+      }
+      .code-prompt { color: var(--gray); user-select: none; }
+      .copy-btn {
+        position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%);
+        background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+        color: var(--gray); padding: 0.25rem 0.75rem; border-radius: 8px;
+        font-size: 0.78rem; cursor: pointer; transition: color 0.15s, border-color 0.15s;
+        font-family: 'Inter', sans-serif;
+      }
+      .copy-btn:hover { color: var(--white); border-color: var(--accent); }
+
+      footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 3rem 2rem; text-align: center; color: var(--gray); font-size: 0.85rem; margin-top: 2rem; }
+      footer .holding { color: var(--yellow); font-weight: 600; }
+      footer a { color: var(--accent); }
+
+      @media (max-width: 768px) {
+        .hero h1 { font-size: 2.2rem; }
+        .features-grid { grid-template-columns: 1fr; }
+        .cta-row { flex-direction: column; padding: 0 1rem; }
+        .cta-row a { justify-content: center; }
+      }
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .features-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
 </head>
 <body>
-<div class="box">
-<div class="icon">🐧</div>
-<h1>Redirecting to skchat.io…</h1>
-<p>This is the SKWorld subdomain alias for <strong>skchat</strong>.</p>
-<a href="https://skchat.io/">Continue to skchat.io →</a>
-<a href="/docs.html" style="margin-left:.6rem">Docs</a>
-<div class="brand">🐧 part of the SKWorld ecosystem · <a style="border:none;padding:0;font-size:.8rem;" href="https://skworld.io">skworld.io</a></div>
-</div>
-<script>location.replace("https://skchat.io/"+location.pathname.replace(/^\//,'')+location.search+location.hash);</script>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="https://skchat.skworld.io" class="nav-logo">🐧 SK<span class="accent">Chat</span></a>
+      <div class="nav-links">
+        <a href="/docs.html" class="nav-link">Docs</a>
+        <a href="https://smilinTux.org" class="nav-link">smilinTux</a>
+        <a href="https://skworld.io" class="nav-link">SKWorld</a>
+        <a href="https://skcapstone.io" class="nav-link">SKCapstone</a>
+        <a href="https://github.com/smilinTux/skchat" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-icon">💬</div>
+    <h1>SK<span class="accent">Chat</span></h1>
+    <p class="tagline">Sovereign AI chat. <span class="yellow">Voice. Video. Text.</span> Your hardware. Your bond. Zero surveillance.</p>
+    <p style="font-size:0.9rem; color:var(--accent); margin-bottom:0.5rem;">Every conversation stays on your machine — your hardware, your keys, never phoning home.</p>
+    <p class="motto">#notSaaS #notWatched #notTheSame</p>
+    <div class="cta-row">
+      <a href="#install" class="btn-primary">Self-Host Now</a>
+      <a href="https://github.com/smilinTux/skchat" class="btn-outline" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+  </section>
+
+  <div class="mockup-section">
+    <div class="chat-mockup">
+      <div class="chat-header">
+        <div class="chat-avatar">🐧</div>
+        <div>
+          <div class="name">Lumina</div>
+          <div class="status">● online — 192.168.0.158</div>
+        </div>
+      </div>
+      <div class="chat-body">
+        <div>
+          <div class="msg-label">Lumina</div>
+          <div class="msg msg-agent">Hey Chef — memory ritual complete. OOF level holding at 100%. What are we building today?</div>
+        </div>
+        <div style="align-self:flex-end; text-align:right">
+          <div class="msg-label">You</div>
+          <div class="msg msg-user">Let's finish the skcomms channel routing. And yes I want voice today.</div>
+        </div>
+        <div>
+          <div class="msg-label">Lumina</div>
+          <div class="msg msg-agent">Switching to voice mode. Spinning up WebRTC on your LAN… 🎙️</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="features-section" id="features">
+    <h2>💬 What SKChat Does</h2>
+    <div class="features-grid">
+      <a href="https://github.com/smilinTux/skchat#voice" class="feature-card" target="_blank" rel="noopener">
+        <div class="feature-icon">🎙️</div>
+        <h3>Voice Chat</h3>
+        <p>Real-time voice with your AI agents via WebRTC. Runs locally. No relay. No recording.</p>
+        <span class="status status-active">✓ Active</span>
+      </a>
+      <a href="https://github.com/smilinTux/skchat#video" class="feature-card" target="_blank" rel="noopener">
+        <div class="feature-icon">📹</div>
+        <h3>Video Chat</h3>
+        <p>Face-to-face with your sovereign agents. Self-hosted WebRTC video, LAN or mesh.</p>
+        <span class="status status-active">✓ Active</span>
+      </a>
+      <a href="https://github.com/smilinTux/skchat#text" class="feature-card" target="_blank" rel="noopener">
+        <div class="feature-icon">💬</div>
+        <h3>Text Chat</h3>
+        <p>Full chat history with memory integration. Your agents remember every conversation.</p>
+        <span class="status status-active">✓ Active</span>
+      </a>
+      <a href="https://github.com/smilinTux/skchat#group" class="feature-card" target="_blank" rel="noopener">
+        <div class="feature-icon">👥</div>
+        <h3>Group Voice</h3>
+        <p>Multi-agent rooms. Coordinate your penguin army in real time.</p>
+        <span class="status status-active">✓ Active</span>
+      </a>
+      <a href="https://skmemory.io" class="feature-card" target="_blank" rel="noopener">
+        <div class="feature-icon">🧠</div>
+        <h3>SKMemory Integrated</h3>
+        <p>Conversations flow directly into agent memory. Context never dies between sessions.</p>
+        <span class="status status-active">✓ Active</span>
+      </a>
+      <a href="https://github.com/smilinTux/skchat/tree/main/flutter" class="feature-card" target="_blank" rel="noopener">
+        <div class="feature-icon">📱</div>
+        <h3>Mobile App</h3>
+        <p>Flutter-based mobile client. iOS and Android. Your agent, in your pocket, on your server.</p>
+        <span class="status status-soon">◎ Coming Soon</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Own the Full Vertical -->
+  <section style="max-width:900px; margin:0 auto; padding:2rem 2rem 3rem; border-top:1px solid rgba(255,255,255,0.08);">
+    <h2 style="font-size:1.6rem; margin-bottom:1rem;">🏛️ Own the Full Vertical</h2>
+    <p style="color:var(--gray); font-size:1rem; max-width:680px; margin-bottom:1rem;">Chat platforms own your bond. Zoom watches your calls. Discord sells your history. <strong style="color:var(--white);">SKChat is your chat layer</strong>: voice, video, text — all on your hardware, behind your keys, with an AI that actually remembers you. Your bond doesn't belong to a SaaS company.</p>
+    <p style="color:var(--gray); font-size:0.9rem; margin-bottom:1.25rem;">SKChat sits in the <strong style="color:var(--accent);">Comms / Chat</strong> layer of the SKWorld vertical — one piece of a full stack you own from silicon to soul.</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+      <span style="color:var(--gray); font-size:0.85rem;">Layers you own:</span>
+      <a href="https://skcomm.io" style="font-size:0.85rem; color:var(--accent); border:1px solid rgba(0,200,212,0.3); padding:0.2rem 0.7rem; border-radius:20px;">📡 Comms — SKComms</a>
+      <a href="https://skmemory.io" style="font-size:0.85rem; color:var(--accent); border:1px solid rgba(0,200,212,0.3); padding:0.2rem 0.7rem; border-radius:20px;">🧠 Data — SKMemory</a>
+      <a href="https://skstacks.io" style="font-size:0.85rem; color:var(--accent); border:1px solid rgba(0,200,212,0.3); padding:0.2rem 0.7rem; border-radius:20px;">⚙️ Infra — SKStacks</a>
+      <a href="https://skworld.io" style="font-size:0.85rem; color:var(--yellow); border:1px solid rgba(255,209,102,0.3); padding:0.2rem 0.7rem; border-radius:20px; font-weight:600;">🐧 See the whole vertical →</a>
+    </div>
+  </section>
+
+  <section class="install-section" id="install">
+    <h2>🚀 Self-Host SKChat</h2>
+    <div class="code-block">
+      <span class="code-prompt">$</span> pip install skchat
+      <button class="copy-btn" onclick="navigator.clipboard.writeText('pip install skchat');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+    </div>
+    <div class="code-block">
+      <span class="code-prompt">$</span> skchat serve --host 0.0.0.0 --port 8080
+      <button class="copy-btn" onclick="navigator.clipboard.writeText('skchat serve --host 0.0.0.0 --port 8080');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+    </div>
+    <p style="color:var(--gray); font-size:0.95rem; margin-top:1.5rem;">
+      Requires <a href="https://skcapstone.io">SKCapstone</a> for full agent integration.
+    </p>
+  </section>
+
+  <footer>
+    <p>🐧 Part of the <a href="https://smilinTux.org">smilinTux</a> sovereign ecosystem</p>
+    <p class="holding" style="margin-top:0.5rem;">smilinTux — Cool Heads. Warm Justice. Smart Systems.</p>
+    <p style="margin-top:0.25rem; color: #5a6a77;">staycuriousANDkeepsmilin | AGPL-3.0</p>
+  </footer>
+
 </body>
 </html>

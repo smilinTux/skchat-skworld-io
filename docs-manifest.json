@@ -2,32 +2,12 @@
   "repo": "smilinTux/skchat",
   "branch": "main",
   "path": "docs",
-  "generated": "2026-08-06",
+  "generated": "2026-06-30",
   "note": "Committed fallback for the /docs viewer when the GitHub Contents API is unavailable or rate-limited. Regenerate from: python docs-manifest-gen.py smilinTux/skchat --out docs-manifest.json",
   "docs": [
     {
-      "name": "2026-07-14-arch-review-dm-stack.md",
-      "title": "SKChat/SKComms DM Stack — Definitive Architecture Assessment"
-    },
-    {
-      "name": "2026-07-15-sovereign-invite-join-architecture.md",
-      "title": "skchat Sovereign Invite / Join / Guest Architecture"
-    },
-    {
       "name": "ARCHITECTURE.md",
       "title": "skchat — Architecture"
-    },
-    {
-      "name": "BOOTSTRAP.md",
-      "title": "BOOTSTRAP: blank machine to a live skchat node"
-    },
-    {
-      "name": "SPACES.md",
-      "title": "skchat Spaces: Standard Operating Procedures"
-    },
-    {
-      "name": "WEBAPP-AND-API-ARCHITECTURE.md",
-      "title": "SKChat Web App + API Architecture"
     },
     {
       "name": "comms-suite-plan.md",
@@ -36,10 +16,6 @@
     {
       "name": "crypto-architecture.md",
       "title": "skchat — Cryptography Architecture & Quantum-Resistance"
-    },
-    {
-      "name": "hermes-channel-epic.md",
-      "title": "skchat → Hermes Messaging-Platform Channel — Architecture & Epic"
     },
     {
       "name": "lumina-everywhere-sprint-plan.md",

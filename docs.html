@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Docs — skchat · Sovereign Chat Interface</title>
-  <meta name="description" content="skchat documentation — architecture, MCP tool reference, cryptography & quantum-resistance, and federation guides. Rendered live from the public smilinTux/skchat repo.">
+  <!-- SKWorld repo-docs viewer — renders smilinTux/skchat docs/*.md live -->
+
+  <title>Docs — SKChat · Sovereign AI Chat</title>
+  <meta name="description" content="SKChat documentation — architecture, MCP reference, crypto & quantum-resistance, federation, and deployment guides. Rendered live from the public smilinTux/skchat repo.">
 
   <link rel="canonical" href="https://skchat.skworld.io/docs.html">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Docs — skchat · Sovereign Chat Interface">
-  <meta property="og:description" content="skchat documentation — architecture, MCP tool reference, cryptography & quantum-resistance, and federation guides. Rendered live from the public smilinTux/skchat repo.">
+  <meta property="og:title" content="Docs — SKChat · Sovereign AI Chat">
+  <meta property="og:description" content="SKChat documentation — architecture, MCP reference, crypto & quantum-resistance, federation, and deployment guides. Rendered live from the public smilinTux/skchat repo.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://skchat.skworld.io/docs.html">
-  <meta property="og:site_name" content="skchat · SKWorld">
+  <meta property="og:site_name" content="SKChat · SKWorld">
   <meta property="og:image" content="https://skchat.skworld.io/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://skchat.skworld.io/og.png">
@@ -320,10 +322,12 @@
   <!-- NAV — replace the section links with your own site anchors -->
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">🐧 <span>sk</span>chat</a>
+      <a href="/" class="nav-logo">🐧 <span>SKChat</span></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle docs menu">☰ Docs</button>
       <ul class="nav-links">
-        <li><a href="https://skchat.io">Home</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://smilinTux.org">smilinTux</a></li>
+        <li><a href="https://skcapstone.io">SKCapstone</a></li>
         <li><a href="/docs.html" class="active">Docs</a></li>
         <li><a href="https://skworld.io">SKWorld</a></li>
         <li><a href="https://github.com/smilinTux/skchat" target="_blank" rel="noopener">GitHub</a></li>
@@ -350,7 +354,7 @@
 
     <!-- Main -->
     <main class="docs-main">
-      <a href="/" class="doc-back">← skchat home</a>
+      <a href="/" class="doc-back">← SKChat home</a>
 
       <div class="doc-toolbar">
         <div class="doc-path" id="docPath"></div>
@@ -388,7 +392,7 @@
     const BRANCH      = "main";                // branch to render from
     const DOCS_PATH   = "docs";                // folder in the repo holding *.md
     const DEFAULT_DOC = "ARCHITECTURE.md";     // doc shown when no ?doc= param (e.g. README.md)
-    const SITE_LABEL  = "skchat";       // used in <title> and status text
+    const SITE_LABEL  = "SKChat";       // used in <title> and status text
     /* ═════════════════════════════════════════════════════════════════════════════ */
 
     const API_LIST   = `https://api.github.com/repos/${REPO}/contents/${DOCS_PATH}`;
