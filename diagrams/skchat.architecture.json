@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "skchat Component Map",
+    "subtitle": "The conversation surface: entry UIs, the daemon core, and the sk ports it delegates to",
+    "output": "skchat.architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "cli", "type": "frontend", "label": "CLI", "sublabel": "skchat command line", "pos": [60, 40], "size": [160, 64] },
+    { "id": "mcp", "type": "frontend", "label": "MCP Server", "sublabel": "skchat-mcp, agent tools", "pos": [260, 40], "size": [160, 64] },
+    { "id": "tui", "type": "frontend", "label": "TUI", "sublabel": "Textual terminal UI", "pos": [460, 40], "size": [160, 64] },
+    { "id": "webui", "type": "frontend", "label": "Web UI", "sublabel": "webui.py, voice-chat server", "pos": [660, 40], "size": [160, 64] },
+
+    { "id": "daemon", "type": "backend", "label": "ChatDaemon", "sublabel": "polling loop, backoff", "pos": [60, 220], "size": [160, 64] },
+    { "id": "transport", "type": "security", "label": "ChatTransport", "sublabel": "PGP seal, outbox retry", "pos": [260, 220], "size": [160, 64] },
+    { "id": "history", "type": "database", "label": "ChatHistory", "sublabel": "SQLite message store", "pos": [460, 220], "size": [160, 64] },
+    { "id": "advocacy", "type": "backend", "label": "AdvocacyEngine", "sublabel": "@mention detection", "pos": [60, 380], "size": [160, 64], "tag": "advocacy loop" },
+    { "id": "group", "type": "backend", "label": "GroupChat", "sublabel": "encrypted groups, key rotation", "pos": [260, 380], "size": [160, 64] },
+    { "id": "voice", "type": "backend", "label": "Voice Pipeline", "sublabel": "Whisper STT, Piper TTS (local)", "pos": [460, 380], "size": [160, 64] },
+
+    { "id": "skcomms", "type": "external", "label": "skcomms", "sublabel": "transport, PGP, failover", "pos": [260, 560], "size": [160, 64] },
+    { "id": "capauth", "type": "security", "label": "capauth", "sublabel": "identity resolution", "pos": [60, 560], "size": [160, 64] },
+    { "id": "skcapstone", "type": "external", "label": "skcapstone", "sublabel": "consciousness loop (skmodel)", "pos": [460, 560], "size": [170, 64] },
+    { "id": "skmemory", "type": "database", "label": "skmemory", "sublabel": "thread capture", "pos": [660, 560], "size": [160, 64] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Entry surfaces", "wraps": ["cli", "mcp", "tui", "webui"] },
+    { "kind": "region", "label": "skchat core", "wraps": ["daemon", "transport", "history", "advocacy", "group", "voice"] },
+    { "kind": "region", "label": "External sk ports", "wraps": ["skcomms", "capauth", "skcapstone", "skmemory"] }
+  ],
+  "connections": [
+    { "id": "cli-to-daemon", "from": "cli", "to": "daemon", "variant": "default" },
+    { "id": "mcp-to-daemon", "from": "mcp", "to": "daemon", "variant": "default" },
+    { "id": "tui-to-daemon", "from": "tui", "to": "daemon", "variant": "default" },
+    { "id": "webui-to-daemon", "from": "webui", "to": "daemon", "variant": "default" },
+
+    { "id": "daemon-to-history", "from": "daemon", "to": "history", "label": "persist message", "variant": "default" },
+    { "id": "daemon-to-advocacy", "from": "daemon", "to": "advocacy", "label": "screen for @mention", "variant": "default" },
+    { "id": "daemon-to-group", "from": "daemon", "to": "group", "variant": "default" },
+    { "id": "daemon-to-transport", "from": "daemon", "to": "transport", "label": "deliver", "variant": "default" },
+    { "id": "voice-to-daemon", "from": "voice", "to": "daemon", "label": "speech to text / reply", "variant": "dashed" },
+
+    { "id": "transport-to-skcomms", "from": "transport", "to": "skcomms", "label": "sealed envelope", "variant": "security" },
+    { "id": "daemon-to-capauth", "from": "daemon", "to": "capauth", "label": "resolve identity", "variant": "dashed" },
+    { "id": "advocacy-to-skcapstone", "from": "advocacy", "to": "skcapstone", "label": "@mention -> consciousness loop", "variant": "emphasis" },
+    { "id": "daemon-to-skmemory", "from": "daemon", "to": "skmemory", "label": "capture threads", "variant": "dashed" }
+  ]
+}
